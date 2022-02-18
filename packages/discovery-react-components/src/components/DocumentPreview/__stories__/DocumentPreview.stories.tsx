@@ -25,7 +25,22 @@ storiesOf('DocumentPreview', module)
     const [file, doc] = docSelection();
     return (
       <Wrapper>
-        <DocumentPreview document={doc} file={file} />
+        <DocumentPreview
+          document={doc}
+          loadFileTimeout={10000}
+          documentProvider={{
+            get: async () => {
+              return new Promise(resolve => {
+                setTimeout(() => {
+                  resolve(file);
+                }, 3000);
+              });
+            },
+            provides: () => {
+              return true;
+            }
+          }}
+        />
       </Wrapper>
     );
   })
