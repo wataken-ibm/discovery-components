@@ -62,8 +62,7 @@ const DocumentPreview: FC<Props> = ({
   highlight,
   messages = defaultMessages,
   didCatch,
-  fallbackComponent,
-  documentProvider
+  fallbackComponent
 }) => {
   const { selectedResult } = useContext(SearchContext);
 
