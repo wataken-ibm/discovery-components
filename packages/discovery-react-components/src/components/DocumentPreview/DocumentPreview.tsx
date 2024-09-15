@@ -50,6 +50,8 @@ interface Props extends WithErrorBoundaryProps {
    * React component rendered as a fallback when no preview is available
    */
   fallbackComponent?: ComponentProps<typeof SimpleDocument>['fallbackComponent'];
+
+  documentProvider?: any;
 }
 
 const SCALE_FACTOR = 1.2;
